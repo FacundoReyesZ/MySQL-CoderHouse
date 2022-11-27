@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS pedido (
     Descripcion varchar(250),
     FOREIGN KEY (Cliente_ID)
         REFERENCES cliente (Cliente_ID),
-    FOREIGN KEY (Plato_ID)
-        REFERENCES plato (Plato_ID)
+    FOREIGN KEY (Producto_ID)
+        REFERENCES producto (Producto_ID)
 );
 
 CREATE TABLE IF NOT EXISTS mozo (
