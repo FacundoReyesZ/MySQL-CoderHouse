@@ -16,6 +16,15 @@ values
 ('2', '4', '2'),
 ('3', '4', '3');
 
+insert into producto
+values
+('1','Cold Brew','500','1','20',current_timestamp(),'Infusion'),
+('2','Exprimido de Naranja','400','1','10',current_timestamp(),'infusion'),
+('3','Mafalda','450','1','20',current_timestamp(),'Panaderia'),
+('4','pau de chocolate','350','1','20',current_timestamp(),'panaderia'),
+('5','Carrot cake','600','1','8',current_timestamp(),'pasteleria');
+
+
 insert into pedido
 values
 ('1','1','1','4','2000',''),
@@ -28,13 +37,6 @@ values
 ('2', 'Julieta', 'Krake','2'),
 ('3', 'Jose', 'Krake','3');
 
-insert into producto
-values
-('1','Cold Brew','500','1','20',current_timestamp(),'Infusion'),
-('2','Exprimido de Naranja','400','1','10',current_timestamp(),'infusion'),
-('3','Mafalda','450','1','20',current_timestamp(),'Panaderia'),
-('4','pau de chocolate','350','1','20',current_timestamp(),'panaderia'),
-('5','Carrot cake','600','1','8',current_timestamp(),'pasteleria');
 
 
 insert into factura
