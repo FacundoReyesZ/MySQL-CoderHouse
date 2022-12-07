@@ -9,7 +9,15 @@ CREATE TABLE IF NOT EXISTS cliente (
     Email VARCHAR(30) NOT NULL
 );
 
-
+CREATE TABLE IF NOT EXISTS producto (
+    Producto_ID INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(30) NOT NULL,
+    Precio DECIMAL(9 , 2 ) NOT NULL,
+    Cantidad INT NOT NULL,
+    Stock INT NOT NULL,
+    Fecha_de_compra DATETIME,
+    Tipo varchar(30)
+);
 
 CREATE TABLE IF NOT EXISTS pedido (
     Pedido_ID INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
@@ -29,11 +37,8 @@ CREATE TABLE IF NOT EXISTS mozo (
     Nombre VARCHAR(30) NOT NULL,
     Apellido VARCHAR(30) NOT NULL,
     Pedido_ID INT NOT NULL UNIQUE,
-    Mesa_ID INT NOT NULL UNIQUE,
     FOREIGN KEY (Pedido_ID)
-        REFERENCES pedido (Pedido_ID),
-	FOREIGN KEY (Mesa_ID)
-        REFERENCES mesa (Mesa_ID)
+        REFERENCES pedido (Pedido_ID)
 );
 
 CREATE TABLE IF NOT EXISTS mesa (
@@ -44,15 +49,7 @@ CREATE TABLE IF NOT EXISTS mesa (
         REFERENCES cliente (Cliente_ID)
 );
 
-CREATE TABLE IF NOT EXISTS producto (
-    Producto_ID INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
-    Nombre VARCHAR(30) NOT NULL,
-    Precio DECIMAL(9 , 2 ) NOT NULL,
-    Cantidad INT NOT NULL,
-    Stock INT NOT NULL,
-    Fecha_de_compra DATETIME,
-    Tipo varchar(30)
-);
+
 
 CREATE TABLE IF NOT EXISTS factura (
     Factura_ID INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
