@@ -12,9 +12,15 @@ values
 
 insert into mesa
 values
-('1', '4', '1'),
+('1', '4', '1'), 
 ('2', '4', '2'),
 ('3', '4', '3');
+
+insert into pedido
+values
+('1','1','1','4','2000',''),
+('2','2','5','2','1200',''),
+('3','3','4','4','1400','');
 
 insert into mozo
 values
@@ -30,9 +36,6 @@ values
 ('4','pau de chocolate','350','1','20',current_timestamp(),'panaderia'),
 ('5','Carrot cake','600','1','8',current_timestamp(),'pasteleria');
 
-insert into pedido
-values
-('1','1','1','4','2000','');
 
 insert into factura
 values
