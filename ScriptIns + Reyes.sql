@@ -18,17 +18,17 @@ values
 
 insert into mozo
 values
-('1', 'Maxo', 'Krake','1','1'),
-('2', 'Julieta', 'Krake','2','2'),
-('3', 'Jose', 'Krake','3','3');
+('1', 'Maxo', 'Krake','1'),
+('2', 'Julieta', 'Krake','2'),
+('3', 'Jose', 'Krake','3');
 
-insert into productos
+insert into producto
 values
-('1','Cold Brew','500','1','20','','Infusion'),
-('2','Exprimido de Naranja','400','1','10','','infusion'),
-('3','Mafalda','450','1','20','','Panaderia'),
-('4','pau de chocolate','350','1','20','','panaderia'),
-('5','Carrot cake','600','1','8','','pasteleria');
+('1','Cold Brew','500','1','20',current_timestamp(),'Infusion'),
+('2','Exprimido de Naranja','400','1','10',current_timestamp(),'infusion'),
+('3','Mafalda','450','1','20',current_timestamp(),'Panaderia'),
+('4','pau de chocolate','350','1','20',current_timestamp(),'panaderia'),
+('5','Carrot cake','600','1','8',current_timestamp(),'pasteleria');
 
 insert into pedido
 values
@@ -36,4 +36,4 @@ values
 
 insert into factura
 values
-('1','2000','','','1','1','1');
+('1','2000',current_timestamp(),current_timestamp(),'1','1','1');
