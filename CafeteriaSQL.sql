@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS mozo (
 CREATE TABLE IF NOT EXISTS mesa (
     Mesa_ID INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
     Numero_personas INT,
-    Cliente_ID INT NOT NULL UNIQUE,
+    Cliente_ID INT NOT NULL,
     FOREIGN KEY (Cliente_ID)
         REFERENCES cliente (Cliente_ID)
 );
@@ -54,11 +54,11 @@ CREATE TABLE IF NOT EXISTS mesa (
 CREATE TABLE IF NOT EXISTS factura (
     Factura_ID INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
     Importe DECIMAL(9 , 2 ) NOT NULL,
-    Fecha DATETIME,
-    Hora DATETIME,
+    Fecha DATE,
+    Hora TIME,
     Pedido_ID INT NOT NULL UNIQUE,
-    Mozo_ID INT NOT NULL UNIQUE,
-    Mesa_ID INT NOT NULL UNIQUE,
+    Mozo_ID INT NOT NULL,
+    Mesa_ID INT NOT NULL,
     FOREIGN KEY (Pedido_ID)
         REFERENCES pedido (Pedido_ID),
     FOREIGN KEY (Mozo_ID)
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS pedido_proveedor (
     Cantidad INTEGER NOT NULL,
     Monto_Total DECIMAL(9 , 2 ) NOT NULL,
     Descripcion VARCHAR(250) NOT NULL,
-    Proveedor_ID INT NOT NULL UNIQUE,
-    Producto_ID INT NOT NULL UNIQUE,
+    Proveedor_ID INT NOT NULl,
+    Producto_ID INT NOT NULL,
     FOREIGN KEY (Proveedor_ID)
         REFERENCES proveedor (Proveedor_ID),
     FOREIGN KEY (Producto_ID)
